@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Directory Listing</title>
+  <meta name="description" content="computer science class designed for anyone and everyone. The Beauty and Joy of Computing is an AP Computer Science Principles class.
+">
+
+  <!-- <link rel="stylesheet" href="/resourcesassets/css/main.css"> -->
+  <link rel="canonical" href="http://cs10.org/sp15/resources/images/supp/">
+
+  <link rel="icon" href="/resources/assets/favicon.png" type="image/png">
+
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/resources/assets/css/bootstrap.min.css">
+
+  <style type="text/css">
+      body {
+  background-image: url(/resources/resources/images/gobo_watermark.gif);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-attachment: fixed;
+  font-family: 'Helvetica'; /* override bootstrap */
+  width: 95%;
+  max-width: 2000px;
+  margin: 1em 2.5%;
+  padding: 0 .3em .3em .3em;
+}
+
+h1 {
+  display: block;
+  background: #003A70;
+  background: -moz-linear-gradient(top,  #003A70 0%, #3f7dc2 50%, #003A70 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#003A70), color-stop(50%,#3f7dc2), color-stop(100%,#003A70)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #003A70 0%,#3f7dc2 50%,#003A70 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #003A70 q%,#3f7dc2 50%,#003A70 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #003A70 0%,#3f7dc2 50%,#003A70 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #003A70 0%,#3f7dc2 50%,#003A70 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003A70', endColorstr='#003A70',GradientType=0 ); /* IE6-9 */
+  border-radius: 2em;
+  box-shadow: 2px 3px 6px #606060;
+  padding: .3em 1em;
+  color: #FFF;
+  font-family: 'VAG Rounded Light';
+  font-size: 1.6em;
+  text-shadow: 1px 1px 2px #555;
+  vertical-align: middle;
+}
+
+
+.logo {
+  font-family: 'VAG Rounded Light';
+  font-size: 2.25em;
+  margin: .1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header {
+  display: inline-block;
+  width: 100%;
+}
+.header, .header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.left {
+  width: 250px;
+}
+.header > .center {
+  min-width: 50px;
+  width: 60%;
+  max-width: 100%;
+}
+.right {
+  text-align: right;
+  min-width: 100px;
+  width: 17%;
+  max-width: 250px;
+}
+/*
+display table-cell auto width
+Specifiy:
+min-width -- presentation / readbility
+width -- size, set smaller than 1/(num items)
+max-width -- set >= 1/(num items) */
+.ql {
+  font-size: 1.1em;
+  text-align: center;
+  display: table-cell;
+}
+
+.vcenter {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* centered columns styles */
+.row-centered {
+  text-align: center;
+}
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align:center;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+
+
+
+
+.header {
+  display: inline-block;
+  width: 100%;
+}
+.header, .header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.left {
+  width: 250px;
+}
+.header > .center {
+  min-width: 50px;
+  width: 60%;
+  max-width: 100%;
+}
+.right {
+  text-align: right;
+  min-width: 100px;
+  width: 17%;
+  max-width: 250px;
+}
+/*
+display table-cell auto width
+Specifiy:
+min-width -- presentation / readbility
+width -- size, set smaller than 1/(num items)
+max-width -- set >= 1/(num items) */
+.ql {
+  font-size: 1.1em;
+  text-align: center;
+  display: table-cell;
+}
+
+.logo {
+  font-family: 'VAG Rounded Light';
+  font-size: 2.25em;
+  margin: .1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header {
+    display: inline-block;
+    width: 100%;
+}
+.header, .header > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.left {
+    width: 250px;
+}
+.header > .center {
+    min-width: 50px;
+    width: 60%;
+    max-width: 100%;
+}
+.right {
+    text-align: right;
+    min-width: 100px;
+    width: 17%;
+    max-width: 250px;
+}
+/*
+display table-cell auto width
+Specifiy:
+min-width -- presentation / readbility
+width -- size, set smaller than 1/(num items)
+max-width -- set >= 1/(num items) */
+.ql {
+    font-size: 1.1em;
+    text-align: center;
+    display: table-cell;
+}
+h1 {
+    display: block;
+    padding: .3em 1em;
+    font-family: 'VAG Rounded Light';
+    font-size: 1.6em;
+    vertical-align: middle;
+}
+.vcenter {
+    display: table-cell;
+    vertical-align: middle;
+}
+    /* centered columns styles */
+    .row-centered {
+        text-align:center;
+    }
+    .col-centered {
+        display:inline-block;
+        float:none;
+        /* reset the text-align */
+        text-align:center;
+        /* inline-block space fix */
+        margin-right:-4px;
+    }
+  </style>
+
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-47210910-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+</head>
+
+
+  <body>
+
+    <!-- <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/resources/">CS10 | Spring 2015</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/resources/assets/css/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/assets/fonts/bpreplay/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/assets/fonts/FreightMicroPro/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/assets/fonts/FreightTextPro/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/assets/fonts/vagrounded/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/assets/fonts/FreightSansPro/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/exams/final/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/exams/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/exams/midterm/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/exams/quest/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/Fa12/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/Fa12/t/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/Fa13/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/nav/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/small/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/Sp13/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/Sp13/t/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/Sp14/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/Su13/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/images/supp/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/index.html">Directory Listing</a>
+          
+        
+          
+          <a class="page-link" href="/resources/readings/index.html">Directory Listing</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header> -->
+
+
+      <link href="/resources/assets/cs10style.css" rel="stylesheet"/>
+
+  <script src="/resources/assets/directory-concat.js"></script>
+
+  <script type="text/javascript">
+    var ignore_list = [ 'index.html', '.DAV', '.DS_Store', '.bzr', '.bzrignore', '.bzrtags', '.git', '.gitattributes', '.gitignore', '.gitmodules', '.hg', '.hgignore', '.hgtags', '.htaccess', '.htpasswd', '.jshintrc', '.npmignore', '.Spotlight-V100', '.svn', '__MACOSX', 'ehthumbs.db', 'robots.txt', 'Thumbs.db', 'thumbs.tps' ];
+
+    function headerPath() {
+      var path = location.pathname.split('/');
+      document.title = 'CS10 Files in: ' + path[path.length - 2];
+      $('h1.title').html(document.title)
+      var parentDir = '/sp15';
+      path.forEach(function(dir) {
+        if (dir && dir !== 'sp15') {
+          var a  = $('<a>').attr({'href': parentDir + '/' + dir }).html(dir);
+          var li = $('<li>').html(a)
+          $('.breadcrumb').append(li);
+          parentDir += '/' + dir;
+        }
+      });
+    }
+
+    function calculateSize(size) {
+        labels = ['YB', 'ZB', 'EB', 'PB', 'TB', 'GB', 'MB', 'KB', 'bytes'];
+        total = labels.length;
+        while(total-- && size > 1024) size /= 1024;
+
+        return Math.round(size, 2) + labels[total];
+    }
+
+    function buildTable(items) {
+      var body = $('<tbody>');
+      items.data.forEach(function(item) {
+        if (ignore_list.indexOf(item.name) === -1) {
+          body.append(buildRow(item));
+        }
+      });
+      $('#bs-table').append(body);
+    }
+
+    function buildRow(item) {
+      var row   = $('<tr>');
+      var link  = $('<td>');
+      var size  = $('<td>');
+      var isDir = item.type === 'dir';
+      var glyph = 'file';
+      var url   = item.download_url;
+      var disp  = calculateSize(item.size);
+
+      if (isDir) {
+          url = '/sp15/' + item.path;
+          glyph = 'folder-close';
+          disp = '—';
+      }
+
+      link.attr({'data-sort-value': item.name.toLowerCase(), 'class': 'text-left'});
+      var span = $('<span>').attr({ 'class': 'glyphicon glyphicon-' + glyph });
+      var text = $('<strong>').html(item.name);
+      var a    = $('<a>').attr({'href': url, 'target':'_blank'}).html(text);
+      span.append('   '); // hack until I fix CSS.
+      span.append(a);
+
+      size.attr({'data-sort-value': item.size, 'class':'text-right' }).html(disp);
+
+      link.append(span);
+      row.append(link);
+      row.append(size);
+
+      return row;
+    }
+
+    var GH_ORG = 'cs10';
+    var repo   = '/resources/';
+    var GH_URL = 'https://api.github.com/repos/' + GH_ORG + repo + 'contents/';
+    var full_url = GH_URL + location.pathname.split(repo)[1].slice(0, -1);
+        full_url += '?callback=buildTable';
+
+    $(document).ready(function() {
+      headerPath();
+      $.ajax({
+        url: full_url,
+        cache: false
+      });
+      $("#bs-table").stupidsort();
+    });
+  </script>
+
+  <div class="container-responsive">
+    <ol class="breadcrumb">
+      <li><a href="/resources/"><span class="glyphicon glyphicon-home"></span></a></li>
+    </ol>
+    <h1 class="title"></h1>
+    <hr />
+    <div class="table-responsive">
+      <table id="bs-table" class="table table-striped">
+        <thead>
+          <tr>
+            <th class="col-lg-8 text-left" data-sort="string">Name</th>
+            <th class="col-lg-2 text-right" data-sort="int">Size</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+
+
+        <hr />
+    <div class="center">
+      This work is licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+        Creative Commons Attribution-Noncommercial-Share Alike 4.0 Unported License</a>.
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+        <img align="right" alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
+      </a>
+    </div>
+
+<!-- <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CS10 | Spring 2015</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>CS10 | Spring 2015</li>
+          <li><a href="mailto:info@cs10.org">info@cs10.org</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">computer science class designed for anyone and everyone. The Beauty and Joy of Computing is an AP Computer Science Principles class.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer> -->
+
+
+  </body>
+
+</html>

@@ -1,0 +1,196 @@
+body {
+  background-image: url({{ site.baseurl }}/resources/images/gobo_watermark.gif);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-attachment: fixed;
+  font-family: 'Helvetica'; /* override bootstrap */
+  width: 95%;
+  max-width: 2000px;
+  margin: 1em 2.5%;
+  padding: 0 .3em .3em .3em;
+}
+
+h1 {
+  display: block;
+  background: #003A70;
+  background: -moz-linear-gradient(top,  #003A70 0%, #3f7dc2 50%, #003A70 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#003A70), color-stop(50%,#3f7dc2), color-stop(100%,#003A70)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #003A70 0%,#3f7dc2 50%,#003A70 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #003A70 q%,#3f7dc2 50%,#003A70 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #003A70 0%,#3f7dc2 50%,#003A70 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #003A70 0%,#3f7dc2 50%,#003A70 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003A70', endColorstr='#003A70',GradientType=0 ); /* IE6-9 */
+  border-radius: 2em;
+  box-shadow: 2px 3px 6px #606060;
+  padding: .3em 1em;
+  color: #FFF;
+  font-family: 'VAG Rounded Light';
+  font-size: 1.6em;
+  text-shadow: 1px 1px 2px #555;
+  vertical-align: middle;
+}
+
+
+.logo {
+  font-family: 'VAG Rounded Light';
+  font-size: 2.25em;
+  margin: .1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header {
+  display: inline-block;
+  width: 100%;
+}
+.header, .header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.left {
+  width: 250px;
+}
+.header > .center {
+  min-width: 50px;
+  width: 60%;
+  max-width: 100%;
+}
+.right {
+  text-align: right;
+  min-width: 100px;
+  width: 17%;
+  max-width: 250px;
+}
+/*
+display table-cell auto width
+Specifiy:
+min-width -- presentation / readbility
+width -- size, set smaller than 1/(num items)
+max-width -- set >= 1/(num items) */
+.ql {
+  font-size: 1.1em;
+  text-align: center;
+  display: table-cell;
+}
+
+.vcenter {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* centered columns styles */
+.row-centered {
+  text-align: center;
+}
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align:center;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+
+
+
+
+.header {
+  display: inline-block;
+  width: 100%;
+}
+.header, .header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.left {
+  width: 250px;
+}
+.header > .center {
+  min-width: 50px;
+  width: 60%;
+  max-width: 100%;
+}
+.right {
+  text-align: right;
+  min-width: 100px;
+  width: 17%;
+  max-width: 250px;
+}
+/*
+display table-cell auto width
+Specifiy:
+min-width -- presentation / readbility
+width -- size, set smaller than 1/(num items)
+max-width -- set >= 1/(num items) */
+.ql {
+  font-size: 1.1em;
+  text-align: center;
+  display: table-cell;
+}
+
+.logo {
+  font-family: 'VAG Rounded Light';
+  font-size: 2.25em;
+  margin: .1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header {
+    display: inline-block;
+    width: 100%;
+}
+.header, .header > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.left {
+    width: 250px;
+}
+.header > .center {
+    min-width: 50px;
+    width: 60%;
+    max-width: 100%;
+}
+.right {
+    text-align: right;
+    min-width: 100px;
+    width: 17%;
+    max-width: 250px;
+}
+/*
+display table-cell auto width
+Specifiy:
+min-width -- presentation / readbility
+width -- size, set smaller than 1/(num items)
+max-width -- set >= 1/(num items) */
+.ql {
+    font-size: 1.1em;
+    text-align: center;
+    display: table-cell;
+}
+h1 {
+    display: block;
+    padding: .3em 1em;
+    font-family: 'VAG Rounded Light';
+    font-size: 1.6em;
+    vertical-align: middle;
+}
+.vcenter {
+    display: table-cell;
+    vertical-align: middle;
+}
+    /* centered columns styles */
+    .row-centered {
+        text-align:center;
+    }
+    .col-centered {
+        display:inline-block;
+        float:none;
+        /* reset the text-align */
+        text-align:center;
+        /* inline-block space fix */
+        margin-right:-4px;
+    }

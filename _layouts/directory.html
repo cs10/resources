@@ -1,0 +1,108 @@
+---
+layout: default
+title: Directory Listing
+---
+  <link href="{{ site.baseurl }}/assets/cs10style.css" rel="stylesheet"/>
+
+  <script src="{{ site.baseurl }}/assets/directory-concat.js"></script>
+
+  <script type="text/javascript">
+    var ignore_list = [ 'index.html', '.DAV', '.DS_Store', '.bzr', '.bzrignore', '.bzrtags', '.git', '.gitattributes', '.gitignore', '.gitmodules', '.hg', '.hgignore', '.hgtags', '.htaccess', '.htpasswd', '.jshintrc', '.npmignore', '.Spotlight-V100', '.svn', '__MACOSX', 'ehthumbs.db', 'robots.txt', 'Thumbs.db', 'thumbs.tps' ];
+
+    function headerPath() {
+      var path = location.pathname.split('/');
+      document.title = 'CS10 Files in: ' + path[path.length - 2];
+      $('h1.title').html(document.title)
+      var parentDir = '/sp15';
+      path.forEach(function(dir) {
+        if (dir && dir !== 'sp15') {
+          var a  = $('<a>').attr({'href': parentDir + '/' + dir }).html(dir);
+          var li = $('<li>').html(a)
+          $('.breadcrumb').append(li);
+          parentDir += '/' + dir;
+        }
+      });
+    }
+
+    function calculateSize(size) {
+        labels = ['YB', 'ZB', 'EB', 'PB', 'TB', 'GB', 'MB', 'KB', 'bytes'];
+        total = labels.length;
+        while(total-- && size > 1024) size /= 1024;
+
+        return Math.round(size, 2) + labels[total];
+    }
+
+    function buildTable(items) {
+      var body = $('<tbody>');
+      items.data.forEach(function(item) {
+        if (ignore_list.indexOf(item.name) === -1) {
+          body.append(buildRow(item));
+        }
+      });
+      $('#bs-table').append(body);
+    }
+
+    function buildRow(item) {
+      var row   = $('<tr>');
+      var link  = $('<td>');
+      var size  = $('<td>');
+      var isDir = item.type === 'dir';
+      var glyph = 'file';
+      var url   = item.download_url;
+      var disp  = calculateSize(item.size);
+
+      if (isDir) {
+          url = '/sp15/' + item.path;
+          glyph = 'folder-close';
+          disp = '—';
+      }
+
+      link.attr({'data-sort-value': item.name.toLowerCase(), 'class': 'text-left'});
+      var span = $('<span>').attr({ 'class': 'glyphicon glyphicon-' + glyph });
+      var text = $('<strong>').html(item.name);
+      var a    = $('<a>').attr({'href': url, 'target':'_blank'}).html(text);
+      span.append('   '); // hack until I fix CSS.
+      span.append(a);
+
+      size.attr({'data-sort-value': item.size, 'class':'text-right' }).html(disp);
+
+      link.append(span);
+      row.append(link);
+      row.append(size);
+
+      return row;
+    }
+
+    var GH_ORG = 'cs10';
+    var repo   = '/resources/';
+    var GH_URL = 'https://api.github.com/repos/' + GH_ORG + repo + 'contents/';
+    var full_url = GH_URL + location.pathname.split(repo)[1].slice(0, -1);
+        full_url += '?callback=buildTable';
+
+    $(document).ready(function() {
+      headerPath();
+      $.ajax({
+        url: full_url,
+        cache: false
+      });
+      $("#bs-table").stupidsort();
+    });
+  </script>
+
+  <div class="container-responsive">
+    <ol class="breadcrumb">
+      <li><a href="{{ site.baseurl }}/"><span class="glyphicon glyphicon-home"></span></a></li>
+    </ol>
+    <h1 class="title"></h1>
+    <hr />
+    <div class="table-responsive">
+      <table id="bs-table" class="table table-striped">
+        <thead>
+          <tr>
+            <th class="col-lg-8 text-left" data-sort="string">Name</th>
+            <th class="col-lg-2 text-right" data-sort="int">Size</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
