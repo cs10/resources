@@ -1,0 +1,92 @@
+Artificial Intelligence
+
+John McCarthy, one of the founders of AI research, has defined the field as
+"getting computers to do things which, when done by people, are said to
+involve intelligence."  The point of this definition is to finesse the whole
+question of what "intelligence" means, or of whether computers "can think."
+
+So, for example, the world's chess champion is now a computer program, but the
+way the program chooses its moves is, everyone agrees, completely different
+from the way human chess players do it.  Chess programs use the sheer speed
+of computers (much, much faster than neuron firing in the human brain) to
+overcome the human's ability, so far not understood or reproducible at all,
+to understand the important characteristics of a chess position at a glance.
+
+There have been machines to do specific calculations (e.g., of planetary
+orbits) for thousands of years.  But people generally date the idea of the
+*programmable* computer, which could do more than one kind of computation,
+to Charles Babbage's proposal to build a "difference engine" in 1822.  He
+never completely built his proposed machine, despite a lot of money poured
+into the project by the British government, because the engineering techniques
+of the day weren't up to the task.  (In 1991, the London Science Museum
+finally built a Difference Engine based on Babbage's drawings.)
+
+In 1889, Herman Hollerith patented a machine that read holes in punched cards
+to tabulate data; his machines were used to carry out the 1890 US Census.  He
+founded the company that later became IBM.
+
+Babbage's and Hollerith's machines were programmable -- you could tell them to
+perform different computations -- but they were all about *numbers*.  That was
+the situation with computers in general, for the most part, until the AI
+researchers introduced *symbolic* computing: programs about relationships
+among concepts, often expressed in the form of mathematical logic, using words
+and lists of words as the fundamental data types.  John McCarthy invented the
+Lisp programming language (a remote ancestor of Scratch, even though Scratch
+doesn't have Lisp's emphasis on words as data) to express this new kind of
+programming.
+
+Other researchers at around the same time were more interested in trying to
+simulate the exact mechanisms of the brain.  They developed software
+simulations of the neuron, the brain's fundamental building block.  Each
+neuron is connected to other neurons, to form a network -- a "neural net."
+The neuron essentially computes a weighted sum of signals from other neurons,
+then either does or doesn't "fire" and send an output signal to yet other
+neurons.
+
+In computer-simulated neural nets, the neurons are typically arranged in
+"layers":  Some neurons get their inputs from an external source, such as a
+digital camera pixel; these "first level" neurons send signals to "second
+level" neurons, which in turn send signals to "third level" neurons, and so
+on.  Usually there aren't very many such levels; three levels seem to be
+enough for most purposes.
+
+The 1969 book _Perceptrons_ by Marvin Minsky and Seymour Papert proved some
+theorems about limitations of neural nets -- not that they weren't universal
+computers in the Turing sense (which they are), but that the level of
+complexity required for certain computations was greater than researchers
+had hoped.  The book gave rise to a wave of pessimism about neural nets as a
+vehicle for artificial intelligence, although there is still argument about
+whether the book itself warranted this pessimism.  In any case, the result
+was a virtual abandonment of that kind of research in the 1970s, when almost
+all AI research used the competing symbolic/logical approach.  That approach
+had many early successes, up to a point, and then seemed unable to progress.
+(For example, the computer chess programs use symbolic computation.)
+
+In the 1980s and later, researchers have combined the two approaches, adding
+a third set of ideas from statistics.  There have been some impressive
+advances fairly recently, although in restricted domains.  For example,
+computer recognition of handwritten characters has advanced to the point where
+the US Postal Service uses computers to read zip codes on envelopes and sort
+the mail automatically.  Although the success rate is not quite 100%, the
+cases in which the computer fails to sort the mail correctly turn out to be
+ones that are also hard for human sorters.  (For example, some people's way
+of writing the digit 1 looks similar to the way they write 7.)  But computers
+still can't reliably recognize handwritten letters, just digits.
+
+The field of AI research has always had nay-sayers who think the whole
+enterprise is impossible.  (Two leading critics of AI are Berkeley professors
+Hubert Dreyfus and John Searle.)  This reaction was partly fueled by early
+overoptimistic predictions by AI researchers, but another reason is that once
+something works, it's no longer thought of as "AI."  For example, speech
+recognition, which was once considered an impossible AI dream, is now
+commonplace in telephone voicemail systems, but people don't think of this
+as representing human-style intelligence just because machines can clearly
+do it.
+
+The original AI researchers included some who were trying specifically to
+simulate the human brain, and others who just wanted to solve problems using
+more "computer-like" techniques.  These two approaches have spun off two
+separate research areas:  "Cognitive Science" is (in part, and in its origins)
+an attempt to understand and simulate human thinking, while "Expert Systems"
+use mainly symbolic reasoning to solve pragmatic problems ranging from medical
+diagnosis to deciding whether to authorize a credit card transaction.
