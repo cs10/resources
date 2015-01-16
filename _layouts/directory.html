@@ -7,15 +7,40 @@ title: Directory Listing
   <script src="{{ site.baseurl }}/assets/directory-concat.js"></script>
 
   <script type="text/javascript">
-    var ignore_list = [ 'index.html', '.DAV', '.DS_Store', '.bzr', '.bzrignore', '.bzrtags', '.git', '.gitattributes', '.gitignore', '.gitmodules', '.hg', '.hgignore', '.hgtags', '.htaccess', '.htpasswd', '.jshintrc', '.npmignore', '.Spotlight-V100', '.svn', '__MACOSX', 'ehthumbs.db', 'robots.txt', 'Thumbs.db', 'thumbs.tps' ];
+    var ignore_list = [ 'index.html', 'index.php', '.gitattributes', '.gitignore',
+                        '.gitmodules', '.htaccess', 'robots.txt', 'assets',
+                         '_layouts', '_includes', 'README.md', '_config.yml'];
+
+    var GH_ORG    = 'cs10', // or username
+        REPO      = 'resources',
+        baseRepo  = '',
+        isSubmodule = false;
+
+    // Support for git submodules.
+    if (location.pathname.indexOf('/resources/') !== -1) {
+      baseRepo = REPO;
+      isSubmodule = true;
+      REPO = 'resources';
+    }
+
+    var gh_base  = 'https://api.github.com/repos/',
+        gh_url   = gh_base + GH_ORG + '/' + REPO + '/' + 'contents/',
+        path     = location.pathname.split(REPO)[1].slice(1, -1),
+        callback = '?callback=buildTable',
+        full_url = gh_url + path + callback;
 
     function headerPath() {
       var path = location.pathname.split('/');
       document.title = 'CS10 Files in: ' + path[path.length - 2];
       $('h1.title').html(document.title)
-      var parentDir = '/sp15';
+      var parentDir = '/' + REPO;
+      if (isSubmodule) {
+        parentDir = '/' + baseRepo;
+      }
       path.forEach(function(dir) {
-        if (dir && dir !== 'sp15') {
+        // Exclude the path to this folder unless it's a submodule
+        // baseRepo is the same as REPO for a submodule
+        if (dir && (dir !== REPO || isSubmodule) && dir !== baseRepo ) {
           var a  = $('<a>').attr({'href': parentDir + '/' + dir }).html(dir);
           var li = $('<li>').html(a)
           $('.breadcrumb').append(li);
@@ -33,11 +58,13 @@ title: Directory Listing
     }
 
     function buildTable(items) {
+      console.log(items);
       var body = $('<tbody>');
       items.data.forEach(function(item) {
         if (ignore_list.indexOf(item.name) === -1) {
           body.append(buildRow(item));
         }
+        return true;
       });
       $('#bs-table').append(body);
     }
@@ -48,19 +75,23 @@ title: Directory Listing
       var size  = $('<td>');
       var isDir = item.type === 'dir';
       var glyph = 'file';
-      var url   = item.download_url;
+      var url   = '/' + REPO + '/' + item.path;
       var disp  = calculateSize(item.size);
 
+      if (isSubmodule) {
+        url = '/' + baseRepo + '/' + url;
+      }
+
       if (isDir) {
-          url = '/sp15/' + item.path;
-          glyph = 'folder-close';
-          disp = '—';
+        url += '/';
+        glyph = 'folder-close';
+        disp = '—';
       }
 
       link.attr({'data-sort-value': item.name.toLowerCase(), 'class': 'text-left'});
       var span = $('<span>').attr({ 'class': 'glyphicon glyphicon-' + glyph });
       var text = $('<strong>').html(item.name);
-      var a    = $('<a>').attr({'href': url, 'target':'_blank'}).html(text);
+      var a    = $('<a>').attr({'href': url}).html(text);
       span.append('   '); // hack until I fix CSS.
       span.append(a);
 
@@ -72,12 +103,6 @@ title: Directory Listing
 
       return row;
     }
-
-    var GH_ORG = 'cs10';
-    var repo   = '/resources/';
-    var GH_URL = 'https://api.github.com/repos/' + GH_ORG + repo + 'contents/';
-    var full_url = GH_URL + location.pathname.split(repo)[1].slice(0, -1);
-        full_url += '?callback=buildTable';
 
     $(document).ready(function() {
       headerPath();
