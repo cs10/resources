@@ -32,7 +32,7 @@ title: Directory Listing
 
     function headerPath() {
       var path = location.pathname.split('/');
-      document.title = 'CS10 Files in: ' + path[path.length - 2];
+      document.title = 'CS10 Files in: ' + decodeURIComponent(path[path.length - 2]);
       $('h1.title').html(document.title)
       var parentDir = '/' + REPO;
       if (isSubmodule) {
